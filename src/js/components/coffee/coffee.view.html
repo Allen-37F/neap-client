@@ -1,8 +1,60 @@
+<button ng-click="coffeeCtrl.showForm()" class="btn btn-success">Add a coffee!</button>
+
+<br><br>
+
+<div ng-if="coffeeCtrl.form">
+  <div class="col-md-4">
+    <form ng-submit="coffeeCtrl.addCoffee()">
+      <div class="form-group">
+        <input type="text" class="form-control" id="name" ng-model="coffeeCtrl.coffee.name" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="roaster" ng-model="coffeeCtrl.coffee.roaster" placeholder="Roaster" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="origin" ng-model="coffeeCtrl.coffee.origin" placeholder="Origin" required>
+      </div>
+      <div class="form-group">
+        <label>Roast:</label>
+        <select class="form-control" ng-model="coffeeCtrl.coffee.roast" required>
+          <option>Dark</option>
+          <option>Medium</option>
+          <option>Light</option>
+          <option>Extra Dark</option>
+          <option>Orange</option>
+
+
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="caffeine" ng-model="coffeeCtrl.coffee.caffeine" placeholder="Caffeine" required>
+      </div>
+      <div class="form-group">
+        <label>Decaf:</label>
+        <select class="form-control" ng-model="coffeeCtrl.coffee.decaf" required>
+          <option>True</option>
+          <option>False</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="price" ng-model="coffeeCtrl.coffee.price" placeholder="Price" required>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Coffee Quantity</label>
+        <input type="number" class="form-control" id="quantity" ng-model="coffeeCtrl.coffee.quantity" placeholder="Quantity" required>
+      </div>
+      <button type="submit" class="btn btn-default">Add</button>
+    </form>
+    <br><br><br><br>
+  </div>
+</div>
+
 <table class="table">
   <thead>
     <tr>
       <th>Roaster</th>
       <th>Name</th>
+      <th>Roast</th>
       <th>Origin</th>
       <th>Price</th>
       <th>Caffeine</th>
@@ -13,6 +65,7 @@
     <tr ng-repeat="coffee in coffeeCtrl.coffee">
       <td>{{coffee.roaster}}</td>
       <td>{{coffee.name}}</td>
+      <td>{{coffee.roast}}</td>
       <td>{{coffee.origin}}</td>
       <td>{{coffee.price | currency}}</td>
       <td>{{coffee.caffeine}}</td>

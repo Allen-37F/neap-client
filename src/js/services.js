@@ -15,6 +15,12 @@
     this.getAllCoffee = function() {
       return $http.get(baseUrl)
     };
+    this.addCoffee = function(coffee) {
+      return $http.post(
+        'baseUrl', coffee
+      )
+    }
+
     // this.getSingleCoffee = function(id) {
     //   return $http.get(baseUrl + '/' + id)
     // }

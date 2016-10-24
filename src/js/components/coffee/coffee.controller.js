@@ -11,6 +11,16 @@
   function coffeeController($scope, coffeeService) {
     /*jshint validthis: true */
     const vm = this;
+    this.form = false;
+    vm.coffeeObj = {};
+    this.showForm = function() {
+      this.form = true;
+    }
+
+    // vm.addCoffee = function(vm.coffeeObj) {
+    //   coffeeService.addCoffee(vm.coffeeObj)
+    // }
+
     coffeeService.getAllCoffee()
     .then((data) => {
       vm.coffee = data.data.data;
