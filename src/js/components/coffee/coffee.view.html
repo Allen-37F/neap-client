@@ -1,5 +1,22 @@
-<p>{{coffeeCtrl.data[0]}}</p>
-
-<ul>
-  <li ng-repeat="coffee in coffeeCtrl.coffee">{{coffee.name}} - {{coffee.roaster}}</li>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Roaster</th>
+      <th>Name</th>
+      <th>Origin</th>
+      <th>Price</th>
+      <th>Caffeine</th>
+      <th>Quantity Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="coffee in coffeeCtrl.coffee">
+      <td>{{coffee.roaster}}</td>
+      <td>{{coffee.name}}</td>
+      <td>{{coffee.origin}}</td>
+      <td>{{coffee.price | currency}}</td>
+      <td>{{coffee.caffeine}}</td>
+      <td>{{coffee.quantity}}</td>
+    </tr>
+  </tbody>
+</table>
